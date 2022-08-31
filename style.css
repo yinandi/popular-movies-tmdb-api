@@ -1,0 +1,107 @@
+/********General*****/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	background: #d9d9d9;
+	color: #1d1d1d;
+	
+}
+
+/*******Header********/
+header{
+	background: #241744;
+	width: 100%;
+	padding: 40px;
+	color: #fff;
+}
+header h1{
+	margin-bottom: 10px;
+}
+header a {
+	color: #fff;
+}
+header a:hover {
+	color: #137c32;
+}
+header p{
+	font-weight: light;
+}
+
+/*******Main**********/
+main {
+	width: 95%;
+	max-width: 1000px;
+	margin: 40px auto 150px auto;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 40px;
+}
+
+main .movie {
+	text-align: center;
+}
+
+main .movie .title {
+	font-size: 16px;
+	font-weight: 600;
+}
+
+main .movie .poster {
+	width: 100%;
+	margin-bottom: 10px;
+	border-radius: 15px;
+}
+
+/*******footer******/
+footer {
+	position: fixed;
+	bottom: 0;
+	background: #100a1f;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	gap: 20px;
+	padding: 30px;
+}
+
+footer button {
+	cursor: pointer;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	height: 50px;
+	width: 200px;
+	background: #241744;
+	color: #fff;
+	border-radius: 100px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	transition: color 3s ease all;
+}
+
+ footer .btnFirst, footer .btnBack{
+	visibility: hidden;
+} 
+
+footer button:hover {
+	background: #137c32;
+}
+
+/********MEDIA QUERIES***/
+@media only screen and (min-width: 576px){
+	.main{
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+@media only screen and (min-width: 768px){
+	.main{
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
