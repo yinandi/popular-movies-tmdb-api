@@ -53,11 +53,18 @@ btnLast.addEventListener('click', ()=>{
 
 const loadMovies = async() => {
     try{
-        const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=96eaa6dd4a0c48b7b4471cfb69b88c32&page=${page}`);
+        const response = await axios.get('https://api.themoviedb.org/3/movie/popular?',{
+            params:{
+                page: page
+            },
+            headers: {
+                'Authorization':  'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5NmVhYTZkZDRhMGM0OGI3YjQ0NzFjZmI2OWI4OGMzMiIsInN1YiI6IjYzMGZhNGY2MTUxMWFhMDA5MjRjNjM4OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.1LlR8Gnis4tQc-G37zF7iTcX5zpdSC6bu4OqR-F9nhE'
+            }
+        });
+        console.log(response);
         if (response.status === 200){
-            const data = await response.json();
             let movies = '';
-            data.results.forEach(movie =>{
+            response.data.results.forEach(movie =>{
                 movies += `
                 <div class="movie">
                     <img class="poster" src="https://image.tmdb.org/t/p/w500/${movie.poster_path}"
