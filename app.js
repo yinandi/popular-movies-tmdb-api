@@ -61,7 +61,6 @@ const loadMovies = async() => {
                 'Authorization':  'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5NmVhYTZkZDRhMGM0OGI3YjQ0NzFjZmI2OWI4OGMzMiIsInN1YiI6IjYzMGZhNGY2MTUxMWFhMDA5MjRjNjM4OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.1LlR8Gnis4tQc-G37zF7iTcX5zpdSC6bu4OqR-F9nhE'
             }
         });
-        console.log(response);
         if (response.status === 200){
             let movies = '';
             response.data.results.forEach(movie =>{
